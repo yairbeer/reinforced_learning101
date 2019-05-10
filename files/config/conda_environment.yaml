@@ -3,7 +3,7 @@ dependencies:
   - python=3.7
   - numpy
   - pandas
-  - gym
   - tensorflow-gpu
   - pip:
       - mlflow
+      - gym
