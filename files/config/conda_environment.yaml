@@ -4,6 +4,7 @@ dependencies:
   - numpy
   - pandas
   - tensorflow-gpu
+  - luigi
   - pip:
       - mlflow
       - gym
