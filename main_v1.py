@@ -26,7 +26,7 @@ def main():
             if done:
                 break
         totals.append(ep_reward)
-    with mlflow.start_run():
+    with mlflow.start_run(experiment_id=1):
         mlflow.log_metric("mean reward", np.mean(totals))
         mlflow.log_metric("std reward", np.std(totals))
 
