@@ -1,13 +1,8 @@
-import random
-
 import gym
 import mlflow
 import numpy as np
 
-
-def basic_policy(obs, right_percent):
-    angle = obs[2]
-    return int(random.random() < right_percent)
+from src.policies import random_policy
 
 
 def main():
@@ -19,10 +14,10 @@ def main():
     for right_percent in [0.5, 0.6, 0.7, 0.8, 0.9, 1.0]:
         for episode in range(n_episodes):
             ep_reward = 0
-            obs = env.reset()
+            _ = env.reset()
             for step in range(max_steps):
-                action = basic_policy(obs, right_percent)
-                obs, reward, done, info = env.step(action)
+                action = random_policy(right_percent)
+                _, reward, done, info = env.step(action)
                 ep_reward += reward
                 if done:
                     break

@@ -1,13 +1,8 @@
-import random
-
 import gym
 import mlflow
 import numpy as np
 
-
-def basic_policy(obs):
-    angle = obs[2]
-    return 0 if angle < 0 else 1
+from src.policies import basic_policy
 
 
 def main():
